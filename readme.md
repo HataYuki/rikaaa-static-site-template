@@ -16,13 +16,13 @@ yarn install
 
 ## Command
 
-The command activate develop mode with browser.
+The command activate develop mode without browser.
 
 ```bash
 yarn run dev
 ```
 
-The command activate develop mode without browser.
+The command activate develop mode with browser.
 
 ```bash
 yarn run devser
