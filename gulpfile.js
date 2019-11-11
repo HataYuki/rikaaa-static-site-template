@@ -93,15 +93,25 @@ gulp.task("clear", cb => {
   cb();
 });
 
+// reload
+gulp.task("reload", cb => {
+  bs.reload();
+  cb();
+});
+
 // watch
-gulp.task("watch", cb => {
+gulp.task("watch_dev", cb => {
   gulp.watch(
     [path.join(config.srcPath, "**/*")],
-    gulp.series("clear", "pug", "sass", "js", "copy"),
-    cb => {
-      bs.reload();
-      cb();
-    }
+    gulp.series("clear", "pug", "sass", "js", "copy")
+  );
+  cb();
+});
+
+gulp.task("watch_devser", cb => {
+  gulp.watch(
+    [path.join(config.srcPath, "**/*")],
+    gulp.series("clear", "pug", "sass", "js", "copy", "reload")
   );
   cb();
 });
@@ -109,12 +119,12 @@ gulp.task("watch", cb => {
 // devser
 gulp.task(
   "devser",
-  gulp.series("pug", "sass", "js", "copy", "watch", "browser"),
+  gulp.series("pug", "sass", "js", "copy", "watch_devser", "browser"),
   cb => cb()
 );
 
 // dev
-gulp.task("dev", gulp.series("pug", "sass", "js", "watch"), cb => cb());
+gulp.task("dev", gulp.series("pug", "sass", "js", "watch_dev"), cb => cb());
 
 // prod
 gulp.task("prod", gulp.series("pug", "sass", "js", "copy"), cb => cb());
