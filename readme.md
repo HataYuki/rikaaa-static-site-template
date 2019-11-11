@@ -14,6 +14,14 @@ rm -rf .git
 yarn install
 ```
 
+## Usage
+
+exit dev/devser mode.
+
+```bash
+ctl + c
+```
+
 ## Command
 
 The command activate develop mode without browser.
