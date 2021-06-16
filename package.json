@@ -22,7 +22,7 @@
     "node-sass": "^4.13.0",
     "node-sass-package-importer": "^5.3.2",
     "normalize.css": "^8.0.1",
-    "postcss": "^7.0.21",
+    "postcss": "^7.0.36",
     "pug": "^2.0.4",
     "webpack": "^4.41.2"
   },
